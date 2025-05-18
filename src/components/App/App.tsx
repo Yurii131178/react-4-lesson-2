@@ -7,6 +7,8 @@
 // import Title from './Title';
 // import Button from './Button';
 import UserMenu from '../UserMenu/UserMenu';
+import ModuleTwo from '../ModuleTwo/ModuleTwo';
+
 // 1. Імпортуємо функцію useState
 
 import { useState } from 'react';
@@ -20,7 +22,7 @@ export default function App() {
   };
 
   const handleEventClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("I'm a button!", event);
+    console.log('I will show you my event!', event);
     console.log('Target', event.target);
   };
 
@@ -100,6 +102,7 @@ export default function App() {
 
   return (
     <>
+      <UserMenu name="Mr. Icon" />
       <br />
       <button onClick={handleFirstClick}>посиланн на функцію!</button>
       <br />
@@ -176,6 +179,7 @@ export default function App() {
         >
           Update z
         </button>
+        <ModuleTwo />
       </div>
 
       {/* <h1>Best selling</h1> */}
@@ -210,7 +214,6 @@ export default function App() {
       {/* <Button text="WTF" />
       <Button variant="primary" text="Login" />
       <Button variant="secondary" text="Follow" /> */}
-      <UserMenu name="Mr. Icon" />
     </>
   );
 }
@@ -694,5 +697,3 @@ function App() {
 
 
 🔍 Це правило потрібне, щоб React міг гарантувати стабільний порядок виклику хуків при кожному рендері. Якщо порушити порядок – буде помилка або непередбачувана поведінка. */
-
-console.log('=======lesson 3_REPETA ALEX=============');
