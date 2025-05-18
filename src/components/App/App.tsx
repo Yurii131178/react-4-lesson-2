@@ -1,21 +1,18 @@
 // src/App.tsx
 
-import Product from './Product';
-import Book from './Book';
-import Mailbox from './Mailbox';
-import Alert from './Alert';
-import Title from './Title';
-import Button from './Button';
-import UserMenu from './UserMenu';
+// import Product from './Product'; // lesson-1
+// import Book from './Book'; // lesson-1
+// import Mailbox from './Mailbox'; // lesson-1
+// import Alert from './Alert'; // lesson-1
+// import Title from './Title';
+// import Button from './Button';
+import UserMenu from '../UserMenu/UserMenu';
 // 1. Імпортуємо функцію useState
 
 import { useState } from 'react';
-import ClickCounter from './clickCounter';
+import ClickCounter from '../ClickCounter/clickCounter';
 // підняття стану
-import LiftStateUpCounter from './LiftStateUpCounter';
-
-
-
+import LiftStateUpCounter from '../LiftStateUpCounter/LiftStateUpCounter';
 
 export default function App() {
   const handleFirstClick = () => {
@@ -181,8 +178,8 @@ export default function App() {
         </button>
       </div>
 
-      <h1>Best selling</h1>
-      <Product
+      {/* <h1>Best selling</h1> */}
+      {/* <Product
         name="Tacos With Lime"
         imgUrl="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?w=640"
         price={10.99}
@@ -191,9 +188,9 @@ export default function App() {
         name="Fries and Burger"
         imgUrl="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?w=640"
         price={14.29}
-      />
-      <Book />
-      <Mailbox
+      /> */}
+      {/* <Book /> */}
+      {/* <Mailbox
         username="Yurii"
         messages={[
           'Hello',
@@ -201,20 +198,19 @@ export default function App() {
           'Meeting at 3 PM',
           'Wash the car',
         ]}
-      />
+      /> */}
 
-      <Alert message="Would you like to browse our recommended products?" />
+      {/* <Alert message="Would you like to browse our recommended products?" />
       <Alert
         type="success"
         message="Payment received, thank you for your purchase"
       />
-      <Alert type="error" message="Please, settle the due amount" />
-      <Title text="CSS-модулі – це окремі .module.css файли, які прив’язані до конкретного компонента." />
-      <Button text="WTF" />
+      <Alert type="error" message="Please, settle the due amount" /> */}
+      {/* <Title text="CSS-модулі – це окремі .module.css файли, які прив’язані до конкретного компонента." /> */}
+      {/* <Button text="WTF" />
       <Button variant="primary" text="Login" />
-      <Button variant="secondary" text="Follow" />
-      <UserMenu name="Mr. Icon" />    
-
+      <Button variant="secondary" text="Follow" /> */}
+      <UserMenu name="Mr. Icon" />
     </>
   );
 }
@@ -699,8 +695,4 @@ function App() {
 
 🔍 Це правило потрібне, щоб React міг гарантувати стабільний порядок виклику хуків при кожному рендері. Якщо порушити порядок – буде помилка або непередбачувана поведінка. */
 
-
-console.log("=======lesson 3_REPETA ALEX=============");
-
-
-
+console.log('=======lesson 3_REPETA ALEX=============');
