@@ -85,6 +85,39 @@ export default function LiftUpState({ value, onUpdate }: LiftUpStateProps) {
     </>
   );
 }
+  ================================================
+отже, в батьківському компоненті зберігається стан прокидається пропсами в компоненти. Значення стану "clicks" прокидається пропсо і функція оновлення стану
+(const updateClics = () => {
+  setClics(clicks + 1);
+  console.log(clicks); ) також прокидається пропсом в компоненти:
+  =====================компоненти=================================
+
+exp/def/fun/ LiftUpState({ value, onUpdate }: LiftUpStateProps) {
+  return (<button className={css.button} onClick={onUpdate}>
+        LiftUpState: {value}</button>
+  );
+} 
+
+Відповідно, ось цей prop { value } - це потос=чне значення стану [clicks, ....], а { onUpdate } - це функція, яка змінює стан.
+
+Що відбувається:
+
+Коли змінюється стан [clicks] оновлюється весь батьківсбкий компонент (у нас він зветься ModuleTwo), тобто він викликається, оновлюється весь JSX, і наші компоненти:
+
+<LiftUpState value={clicks} onUpdate={updateClics} />
+<LiftUpState value={clicks} onUpdate={updateClics} />
+<LiftUpState value={clicks} onUpdate={updateClics} />
+
+отримують нові пропси: нове значення для {value} піде їм, відповідно вони також оновлюються.
+
+бо !!!!!!!компоненти оновлюються лише в двох випадках!!!!!!
+
+1. зміна внутрішнбого стану: const [clicks, setClics] = useState(0);
+2. приходять нові пропси: ({ value, onUpdate }: LiftUpStateProps)
+
+як пропси можуть змінитися?
+
+це коли значення пропса це - стан його батьківського елемента.
 
 
 
